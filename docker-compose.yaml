@@ -5,8 +5,8 @@ services:
     image: mongo:5
     restart: always
     ports:
-      - 27019:27017 # puerto de mi pc : puerto del contenedor
+      - 27020:27017 # puerto de mi pc : puerto del contenedor
     environment:
-      MONGODB_DATABASE: nest-pokemon
+      MONGODB_DATABASE: product-nestjs
     volumes:
       - ./mongo:/data/db
