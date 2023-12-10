@@ -30,7 +30,7 @@ export class CreateProductDto {
   @IsInt()
   @IsPositive()
   @IsOptional()
-  stock?: number;
+  inStock?: number;
 
   @IsString({ each: true }) // cada uno de los elementos del arreglo debe ser string
   @IsArray()
@@ -38,4 +38,13 @@ export class CreateProductDto {
 
   @IsIn(['men', 'women', 'kid', 'unisex'])
   gender: string;
+
+  @IsIn(['shirts', 'pants', 'hoodies', 'hats'])
+  type: string;
+
+  @IsString({ each: true })
+  tags: string[];
+
+  @IsString({ each: true })
+  images: string[];
 }
