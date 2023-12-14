@@ -1,4 +1,4 @@
-import { CreateProductDto } from '../../dto/create-product.dto';
+import { CreateProductDto } from '../../../../modules/products/dto/create-product.dto';
 
 interface SeedData {
   products: CreateProductDto[];

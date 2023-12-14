@@ -7,6 +7,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { EnvConfiguration } from './commons/config/env.config';
 import { SeedModule } from './modules/seed/seed.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { SeedModule } from './modules/seed/seed.module';
     MongooseModule.forRoot(process.env.MONGODB),
     ProductsModule,
     SeedModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

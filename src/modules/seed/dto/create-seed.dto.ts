@@ -1,3 +1,3 @@
-import { CreateProductDto } from '../../../commons/database/dto/create-product.dto';
+import { CreateProductDto } from '../../products/dto/create-product.dto';
 
 export class CreateSeedDto extends CreateProductDto {}
