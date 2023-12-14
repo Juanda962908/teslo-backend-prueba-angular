@@ -1,7 +1,7 @@
 import { IsEmail, IsIn, IsString, Matches, MaxLength, MinLength } from "class-validator";
 
 
-export class CreateUserAuthDto {
+export class LoginUserDto {
 
     @IsString()
     @IsEmail()
@@ -15,11 +15,4 @@ export class CreateUserAuthDto {
             message: 'The password must have a Uppercase, lowercase letter and a number'
         })
     password: string;
-
-    @IsString()
-    @MinLength(1)
-    name: string
-
-    @IsIn(['admin', 'member', 'client'])
-    role: string
 }

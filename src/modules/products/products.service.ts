@@ -1,10 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { CreateProductDto } from './dto/create-product.dto';
-import { UpdateProductDto } from './dto/update-product.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Product } from '../../commons/database/schemas/product.schema';
 import { Model } from 'mongoose';
-import { ConfigService } from '@nestjs/config';
 import { GENDERS } from '../../commons/constants/genders';
 
 
@@ -47,17 +44,5 @@ export class ProductsService {
             throw e;
         }
         return;
-    }
-
-    public create(createProductDto: CreateProductDto) {
-        return 'This action adds a new product';
-    }
-
-    public update(id: number, updateProductDto: UpdateProductDto) {
-        return `This action updates a #${id} product`;
-    }
-
-    public remove(id: number) {
-        return `This action removes a #${id} product`;
     }
 }
