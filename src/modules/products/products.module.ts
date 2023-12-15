@@ -8,10 +8,12 @@ import {
   ProductSchema,
 } from '../../commons/database/schemas/product.schema';
 import { ConfigService } from '@nestjs/config';
+import { AuthModule } from "../auth/auth.module";
 
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: Product.name, schema: ProductSchema }]),
+      AuthModule
   ],
   controllers: [ProductsController],
   providers: [ProductsService, ConfigService],

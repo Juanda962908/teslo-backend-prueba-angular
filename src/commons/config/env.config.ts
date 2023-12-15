@@ -3,4 +3,5 @@ export const EnvConfiguration = () => ({
   mongodb: process.env.MONGODB,
   port: process.env.PORT || 3002,
   defaultLimit: process.env.DEFAULT_LIMIT || 7,
+  JWT_SECRET: process.env.JWT_SECRET
 });

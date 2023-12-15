@@ -1,4 +1,4 @@
-import { IsEmail, IsIn, IsString, Matches, MaxLength, MinLength } from "class-validator";
+import { IsBoolean, IsEmail, IsIn, IsOptional, IsString, Matches, MaxLength, MinLength } from "class-validator";
 
 
 export class CreateUserDto {
@@ -22,4 +22,8 @@ export class CreateUserDto {
 
     @IsIn(['admin', 'member', 'client'])
     role: string
+
+   @IsBoolean()
+   @IsOptional()
+    isActive:boolean
 }

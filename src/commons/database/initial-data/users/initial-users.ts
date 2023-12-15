@@ -13,19 +13,30 @@ export const initialUsers: ISeedUserData = {
             name: 'Andres Molina',
             email: 'andres@google.com',
             password: bcrypt.hashSync('123456',10),
-            role: 'admin'
+            role: 'admin',
+            isActive:true
         },
         {
             name: 'Juan Daniel De la hoz',
             email: 'juanda@google.com',
-            password: bcrypt.hashSync('123456',10),
-            role: 'client'
+            password: bcrypt.hashSync('Corona4a*',10),
+            role: 'admin',
+            isActive:true
         },
         {
             name: 'Angela Espinoza',
             email: 'angela@google.com',
             password: bcrypt.hashSync('123456',10),
-            role: 'member'
+            role: 'member',
+            isActive:true
+        },
+
+        {
+            name: 'Claudia Esquivel',
+            email: 'claudia@google.com',
+            password: bcrypt.hashSync('123456',10),
+            role: 'client',
+            isActive:true
         }
     ]
 };
