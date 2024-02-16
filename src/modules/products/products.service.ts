@@ -17,18 +17,8 @@ export class ProductsService {
 
     public findAll(paginationDto: PaginationDto) {
         const { limit = 10, offset = 0 } = paginationDto
-        console.log("************************", "buscando en todos los products", paginationDto)
         try {
-            /**
-             * limit: cuantos va a traer por consulta
-             * offset: cuantos se va a saltar, eje: si offset es igual a
-             * 10 = se salta los primeros 10
-             * 20 = se salta los primeros 20
-             * 30 = se salta los primeros 30
-             * y así...
-             *
-             */
-            return this.productModel.find().limit(limit).skip(offset).sort(
+            return this.productModel.find().sort(
                 {
                     no: 1
                 }
