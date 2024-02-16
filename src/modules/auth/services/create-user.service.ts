@@ -1,11 +1,12 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { CreateUserDto } from '../dto/create-user.dto';
-import { InjectModel } from "@nestjs/mongoose";
-import { User } from "../../../commons/database/schemas/user.schema";
 import { Model } from "mongoose";
-
 import * as bcrypt from 'bcrypt'
+
+import { InjectModel } from "@nestjs/mongoose";
+import { CreateUserDto } from '../dto/create-user.dto';
 import { GenerateJwtHelper } from "../helper/generate-jwt.helper";
+import { User } from "../../../commons/database/schemas/user.schema";
+
 
 
 @Injectable()

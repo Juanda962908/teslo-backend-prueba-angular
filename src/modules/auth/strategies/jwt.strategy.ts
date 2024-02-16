@@ -1,10 +1,11 @@
-import { PassportStrategy } from "@nestjs/passport";
-import { User } from "../../../commons/database/schemas";
-import { ExtractJwt, Strategy } from "passport-jwt";
-import { IJwtPayload } from "../entities/jwt-payload.entities";
-import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
 import { ConfigService } from "@nestjs/config";
+import { PassportStrategy } from "@nestjs/passport";
+
+import { InjectModel } from "@nestjs/mongoose";
+import { ExtractJwt, Strategy } from "passport-jwt";
+import { User } from "../../../commons/database/schemas";
+import { IJwtPayload } from "../entities/jwt-payload.entities";
 import { Injectable, UnauthorizedException } from "@nestjs/common";
 
 

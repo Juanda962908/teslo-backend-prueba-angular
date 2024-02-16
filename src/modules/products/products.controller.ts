@@ -1,10 +1,8 @@
 import mongoose from 'mongoose';
 import { Response } from 'express';
-import { Controller, Get, Param, Query, Res, } from '@nestjs/common';
+import { Controller, Get, Param, Res, } from '@nestjs/common';
 
 import { ProductsService } from './products.service';
-import { Auth } from "../auth/decorators/auth.decorator";
-import { PaginationDto } from "../../commons/dtos/pagination.dto";
 
 
 @Controller('products')
@@ -13,7 +11,6 @@ export class ProductsController {
     }
 
 
-    /// con @query traigo todos los queryparams, paginationDto es el nombre de la variable que tiene los query param
     @Get()
     private findAll() {
         return this.productsService.findAll();

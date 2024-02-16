@@ -1,17 +1,18 @@
 import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
-import { CreateUserService } from './services/create-user.service';
-import { CreateUserDto } from './dto/create-user.dto';
-import { LoginUserDto } from "./dto/login-user.dto";
-import { LoginUserService } from "./services/login-user.service";
 import { AuthGuard } from "@nestjs/passport";
-import { User } from "../../commons/database/schemas";
-import { ValidRolesEnums } from "./entities/valid-roles.entities";
+
 import { Auth } from "./decorators/auth.decorator";
-import { GetUser } from "./decorators/get-user.decorator";
-import { RoleProtected } from "./decorators/role-protected.decorator";
+import { LoginUserDto } from "./dto/login-user.dto";
+import { User } from "../../commons/database/schemas";
+import { CreateUserDto } from './dto/create-user.dto';
 import { UserRoleGuard } from "./guards/user-role.guard";
+import { GetUser } from "./decorators/get-user.decorator";
 import { RawHeaders } from "./decorators/raw-headers.decorator";
+import { LoginUserService } from "./services/login-user.service";
+import { ValidRolesEnums } from "./entities/valid-roles.entities";
+import { CreateUserService } from './services/create-user.service';
 import { CheckStatusService } from "./services/check-status.service";
+import { RoleProtected } from "./decorators/role-protected.decorator";
 
 
 @Controller('auth')
@@ -56,8 +57,8 @@ export class AuthController {
 
 
     @Get('private2')
-    @RoleProtected(ValidRolesEnums.admin) // la primera protección es que debe ser un rol de admin
-    @UseGuards(AuthGuard(), UserRoleGuard) // la segunda protección es que debe estar autenticado y se valida el rol
+    @RoleProtected(ValidRolesEnums.admin)
+    @UseGuards(AuthGuard(), UserRoleGuard)
     private _testingPrivateRoute2(@GetUser('email') user: User, @RawHeaders() rawHeaders: string[]) {
         return {
             ok: true,

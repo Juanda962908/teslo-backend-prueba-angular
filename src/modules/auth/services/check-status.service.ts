@@ -1,6 +1,5 @@
 import { Injectable } from "@nestjs/common";
 import { GenerateJwtHelper } from "../helper/generate-jwt.helper";
-import { User } from "../../../commons/database/schemas";
 
 
 @Injectable()
