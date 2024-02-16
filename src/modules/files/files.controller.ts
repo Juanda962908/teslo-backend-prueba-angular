@@ -1,6 +1,7 @@
-import { Controller, Get, Param, Res } from '@nestjs/common';
-import { FilesService } from './files.service';
 import { Response } from 'express';
+import { Controller, Get, Param, Res } from '@nestjs/common';
+
+import { FilesService } from './files.service';
 @Controller('files')
 export class FilesController {
   constructor(

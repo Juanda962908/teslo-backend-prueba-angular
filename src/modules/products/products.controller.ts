@@ -15,8 +15,8 @@ export class ProductsController {
 
     /// con @query traigo todos los queryparams, paginationDto es el nombre de la variable que tiene los query param
     @Get()
-    private findAll(@Query() paginationDto: PaginationDto) {
-        return this.productsService.findAll(paginationDto);
+    private findAll() {
+        return this.productsService.findAll();
     }
 
 

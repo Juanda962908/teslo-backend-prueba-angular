@@ -15,8 +15,7 @@ export class ProductsService {
     }
 
 
-    public findAll(paginationDto: PaginationDto) {
-        const { limit = 10, offset = 0 } = paginationDto
+    public findAll() {
         try {
             return this.productModel.find().sort(
                 {

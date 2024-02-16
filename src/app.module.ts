@@ -8,9 +8,9 @@ import { AppService } from './app.service';
 import { AppController } from './app.controller';
 import { SeedModule } from './modules/seed/seed.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { FilesModule } from './modules/files/files.module';
 import { EnvConfiguration } from './commons/config/env.config';
 import { ProductsModule } from './modules/products/products.module';
-import { FilesModule } from './modules/files/files.module';
 
 
 @Module({
